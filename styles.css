@@ -1,0 +1,157 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #facbc6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.container {
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #ff6f61;
+}
+
+.cake-container {
+    position: relative;
+    margin-top: 20px;
+}
+
+.cake {
+    position: relative;
+    width: 200px;
+    height: 150px;
+    background-color: #ffb6c1;
+    border-radius: 10px;
+    margin: 0 auto;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cake .candle {
+    position: absolute;
+    top: -40px;
+    width: 10px;
+    height: 40px;
+    background-color: #ffefd5;
+    border-radius: 5px;
+}
+
+.cake .candle:before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 2px;
+    width: 6px;
+    height: 10px;
+    background-color: orange;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+    animation: flicker 1.5s infinite alternate;
+}
+
+.cake .candle:nth-child(1) {
+    left: 60px;
+}
+
+.cake .candle:nth-child(2) {
+    left: 95px;
+}
+
+.cake .candle:nth-child(3) {
+    left: 130px;
+}
+
+.cake .base {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20px;
+    background-color: #ff69b4;
+    border-radius: 0 0 10px 10px;
+}
+
+@keyframes flicker {
+    0% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .cake {
+        width: 150px;
+        height: 100px;
+    }
+
+    .cake .candle {
+        top: -30px;
+        width: 8px;
+        height: 30px;
+    }
+
+    .cake .candle:before {
+        top: -8px;
+        width: 5px;
+        height: 8px;
+    }
+
+    .cake .candle:nth-child(1) {
+        left: 45px;
+    }
+
+    .cake .candle:nth-child(2) {
+        left: 72px;
+    }
+
+    .cake .candle:nth-child(3) {
+        left: 99px;
+    }
+}
+
+
+
+
+
+.celebration-message {
+    font-size: 1.5em;
+    color: #ff6f61;
+    margin-top: 20px;
+    animation: pop-up 0.5s ease-in-out;
+}
+
+@keyframes pop-up {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.confetti-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ff6f61;
+    animation: fall 5s linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-100vh) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(360deg); }
+}
